@@ -61,8 +61,6 @@ public partial class PromodoroMainPage : ContentPage
     {
         //decreas the coundtown by one second
         _promodoroCountdown--;
-
-        
        
         //display the time in the MainPage
         promodoroMainPageViewViewModel.RemainingTime = ConvertTime(_promodoroCountdown);
