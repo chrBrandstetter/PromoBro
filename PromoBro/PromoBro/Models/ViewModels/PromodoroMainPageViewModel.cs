@@ -9,8 +9,8 @@ namespace PromoBro.Models.ViewModels
 {
     public class PromodoroMainPageViewModel : INotifyPropertyChanged
     {
-        private int _remainingTime;
-        public int RemainingTime 
+        private string? _remainingTime;
+        public string RemainingTime 
         {
             get 
             { 
@@ -22,8 +22,6 @@ namespace PromoBro.Models.ViewModels
                 OnPropertyChanged(nameof(RemainingTime));
             }
         }
-
-        public string Description { get; set; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
