@@ -22,8 +22,6 @@ public partial class PromodoroMainPage : ContentPage
         BindingContext = promodoroMainPageViewViewModel;
     }
 
-    
-
     private void btnHistory_Clicked(object sender, EventArgs e)
     {
         //navigate to corresponding Page
