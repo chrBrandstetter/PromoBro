@@ -9,7 +9,7 @@
         <Button x:Name="btnHistory" Clicked="btnHistory_Clicked" Text="History"></Button>
         <Button x:Name="btnTimerStart" Clicked="btnTimerStart_Clicked" Text="Start Timer"></Button>
         <Button x:Name="btnTimerStop" Clicked="btnTimerStop_Clicked" Text="Stop Timer"></Button>
-            <Grid>
+        <Grid>
             <TableView>
                 <TableSection>
                     <TextCell Text="{Binding RemainingTime}"></TextCell>
