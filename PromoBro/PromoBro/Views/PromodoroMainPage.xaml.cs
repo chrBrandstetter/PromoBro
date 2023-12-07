@@ -32,10 +32,4 @@ public partial class PromodoroMainPage : ContentPage
     {
        promodoroMainPageViewViewModel.SetTimer(BIG_PROMO); 
     }
-
-    private void btnTimerStop_Clicked(object sender, EventArgs e)
-    {
-        promodoroMainPageViewViewModel.StopTimer();
-        promodoroMainPageViewViewModel.RemainingTime = _defaultStartingTime; 
-    }
 }

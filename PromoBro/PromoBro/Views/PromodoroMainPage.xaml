@@ -5,16 +5,23 @@
              Title="PromodoroMainPage"
              xmlns:vm="clr-namespace:PromoBro.Models.ViewModels"
              x:DataType="vm:PromodoroMainPageViewModel">
-    <VerticalStackLayout>
-        <Button x:Name="btnHistory" Clicked="btnHistory_Clicked" Text="History"></Button>
-        <Button x:Name="btnTimerStart" Clicked="btnTimerStart_Clicked" Text="Start Timer"></Button>
-        <Button x:Name="btnTimerStop" Clicked="btnTimerStop_Clicked" Text="Stop Timer"></Button>
-        <Grid>
-            <TableView>
-                <TableSection>
-                    <TextCell Text="{Binding RemainingTime}"></TextCell>
-                </TableSection>
-            </TableView>
-        </Grid>
-    </VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Row 0 -->
+            <RowDefinition Height="Auto" />
+            <!-- Row 1 -->
+            <RowDefinition Height="Auto" />
+            <!-- Row 2 -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Row 0: Label -->
+        <Label Grid.Row="0" Text="{Binding RemainingTime}" FontSize="80" HorizontalOptions="Center" />
+
+        <!-- Row 1: Button -->
+        <Button Grid.Row="1" x:Name="btnTimerStart" Clicked="btnTimerStart_Clicked" Text="Start Timer" />
+
+        <!-- Row 2: Button -->
+        <Button Grid.Row="2" x:Name="btnHistory" Clicked="btnHistory_Clicked" Text="History" />
+    </Grid>
 </ContentPage>

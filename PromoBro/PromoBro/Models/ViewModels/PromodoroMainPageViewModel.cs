@@ -37,13 +37,22 @@ namespace PromoBro.Models.ViewModels
 
         public void SetTimer(int time)
         {
-            _promodoroCountdown = time; 
-            //the timer should tick every second
-            _timer = new System.Timers.Timer(1000);
+            if(_timer != null)
+            {
+                _timer.Stop();
+                RemainingTime = ConvertTime(time);
+                _timer = null;
+            }
+            else
+            {
+                _promodoroCountdown = time;
+                //the timer should tick every second
+                _timer = new System.Timers.Timer(1000);
 
-            _timer.Elapsed += timerElapsed;
+                _timer.Elapsed += timerElapsed;
 
-            _timer.Start();
+                _timer.Start();
+            }
         }
 
         public void timerElapsed(object sender, EventArgs e)
@@ -53,11 +62,6 @@ namespace PromoBro.Models.ViewModels
 
             //display the time in the MainPage
             RemainingTime = ConvertTime(_promodoroCountdown);
-        }
-
-        public void StopTimer()
-        {
-            _timer?.Stop();
         }
 
         public string ConvertTime(int time)
